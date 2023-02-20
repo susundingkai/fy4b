@@ -4,10 +4,42 @@
              xmlns:models="clr-namespace:fy4b.Models"
              x:Class="fy4b.MainPage">
 
-
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Open Folder"
+                            Clicked="PickFolder" />
+        </MenuBarItem>
+        <MenuBarItem Text="Locations">
+            <MenuFlyoutSubItem Text="Change Location">
+                <MenuFlyoutItem Text="Redmond, USA"
+                                Command="{Binding ChangeLocationCommand}"
+                                CommandParameter="Redmond" />
+                <MenuFlyoutItem Text="London, UK"
+                                Command="{Binding ChangeLocationCommand}"
+                                CommandParameter="London" />
+                <MenuFlyoutItem Text="Berlin, DE"
+                                Command="{Binding ChangeLocationCommand}"
+                                CommandParameter="Berlin"/>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem Text="Add Location"
+                            Command="{Binding AddLocationCommand}" />
+            <MenuFlyoutItem Text="Edit Location"
+                            Command="{Binding EditLocationCommand}" />
+            <MenuFlyoutItem Text="Remove Location"
+                            Command="{Binding RemoveLocationCommand}" />
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Refresh"
+                            Command="{Binding RefreshCommand}" />
+            <MenuFlyoutItem Text="Change Theme"
+                            Command="{Binding ChangeThemeCommand}" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.5*" />
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
@@ -22,7 +54,17 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Image x:Name="ImageRemoteSense" Grid.Column="1"/>
+        <CollectionView  Grid.Column="1" SelectionMode="Single" x:Name="ListViewChannels"
+                         SelectionChanged="OnCollectionViewSelectionChanged2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding ChannelIndex}"></Label>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Image x:Name="ImageRemoteSense" Grid.Column="2"/>
+
     </Grid>
+
 </ContentPage>
 
