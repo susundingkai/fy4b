@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{ED41F9A0-171E-4659-9E5C-6FDD92B394FE}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.fy4b PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../usr/local/share/dotnet/packs/Microsoft.MacCatalyst.Sdk/16.2.1024/tools/msbuild/iOS/Xamarin.Shared.targets">
+    <Files>
+      <File FileName="../../../../usr/local/share/dotnet/packs/Microsoft.MacCatalyst.Sdk/16.2.1024/tools/msbuild/iOS/Xamarin.Shared.targets" Line="1738" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="fy4b" expanded="True">
+            <Node name="fy4b" expanded="True" selected="True">
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
