@@ -18,16 +18,17 @@ public partial class MainPage : ContentPage
         {
             var init = -2;
             //0,1,2,3,17,18
-            List<int> station = new List<int>();
-            List<int> lon = new List<int>();
-            List<int> lat = new List<int>();
-            List<int> high = new List<int>();
-            List<int> vis = new List<int>();
-            List<int> code = new List<int>();
+            List<float> station = new List<float>();
+            List<float> lon = new List<float>();
+            List<float> lat = new List<float>();
+            List<float> high = new List<float>();
+            List<float> vis = new List<float>();
+            List<float> code = new List<float>();
             while (!reader.EndOfStream)
             {
                 if (init < 0)
                 {
+                    var _ = reader.ReadLine().TrimStart();
                     init++;
                     continue;
                 }
@@ -36,26 +37,26 @@ public partial class MainPage : ContentPage
                 int cnt = -1;
                 foreach(var v in values)
                 {
-                    if(v.Length>0) cnt++;
+                    if (v.Length > 0) cnt++;
+                    else continue;
                     switch(cnt)
                     {
                         case 0:
-                            station.Add(Convert.ToInt32(v)); break;
+                            station.Add(Convert.ToSingle(v)); break;
                         case 1:
-                            lon.Add(Convert.ToInt32(v)); break;
+                            lon.Add(Convert.ToSingle(v)); break;
                         case 2:
-                            lat.Add(Convert.ToInt32(v)); break;
+                            lat.Add(Convert.ToSingle(v)); break;
                         case 3:
-                            high.Add(Convert.ToInt32(v)); break;
+                            high.Add(Convert.ToSingle(v)); break;
                         case 17:
-                            vis.Add(Convert.ToInt32(v)); break;
+                            vis.Add(Convert.ToSingle(v)); break;
                         case 18:
-                            code.Add(Convert.ToInt32(v)); break;
+                            code.Add(Convert.ToSingle(v)); break;
                     }
                 }
 
-                listA.Add(values[0]);
-                listB.Add(values[1]);
+ 
             }
         }
 
